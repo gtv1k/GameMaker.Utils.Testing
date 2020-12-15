@@ -110,6 +110,13 @@ testAdd.tearDown(function() {
 In the example above, we're able to add instructions to this <samp>TestCase.setUp()</samp> and <samp>TestCase.tearDown()</samp> functions. These functions are very powerful. Notice in the example that we're able to define a variable to the <samp>TestCase</samp> in the <samp>setUp()</samp> function and be able to call upon it in the <samp>test()</samp> and <samp>tearDown()</samp> functions. Passing variables in this fashion applies the variables directly to the structure. This could possibly lead to you overwritting variables and breaking the objects. Be careful with these functions.
 
 
+<h2>Parents<h2>
+
+<samp>TestSuite</samp> and <samp>TestCase</samp> have the variable <samp>parent</samp>, which is <samp>undefined</samp> when initialized. This variable gets populated when the struct gets added through <samp>TestRunner.addTestSuite(TestSuite)</samp> or <samp>TestSuite.addTestCase(TestCase)</samp> respectively. This is to help you traverse through your unit testing hierarchy and is especially handy when it comes to re-using assets such as objects for multiple tests.
+
+
+
+
 <h2>License</h2>
 <a href="https://opensource.org/licenses/MIT" _target="blank">MIT License</a>
 <p>Copyright (c) 2020 bfrymire</p>
