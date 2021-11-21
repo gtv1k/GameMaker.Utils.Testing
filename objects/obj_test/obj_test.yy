@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "GameMaker.Utils.Testing",
+    "path": "folders/Objects/GameMaker.Utils.Testing.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_test",
