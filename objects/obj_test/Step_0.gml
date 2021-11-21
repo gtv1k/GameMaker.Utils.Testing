@@ -1,11 +1,16 @@
 // Run the TestRunner
-if CRISPY_RUN {
-	if can_run_tests {
+if CRISPY_RUN 
+{
+	if can_run_tests 
+	{
 		can_run_tests = false;
 		runner.run();
-	} else {
+	}
+	else
+	{
 		// Re-run tests
-		if keyboard_check_pressed(ord("R")) {
+		if keyboard_check_pressed(ord("R"))
+		{
 			can_run_tests = true;
 			scroll_position = 0;
 		}
@@ -13,14 +18,16 @@ if CRISPY_RUN {
 }
 
 // Clear test results
-if keyboard_check_pressed(ord("C")) {
+if keyboard_check_pressed(ord("C"))
+{
 	ds_list_clear(results);
 	scroll_position = 0;
 }
 
 // Scrolling through test results
 scroll_dir = -(mouse_wheel_up() || keyboard_check_pressed(vk_up)) + (mouse_wheel_down() || keyboard_check_pressed(vk_down))
-if scroll_dir != 0 && ds_list_size(results) > 0 {
+if scroll_dir != 0 && ds_list_size(results) > 0 
+{
 	var _scroll_multiplier = 2;
 	var _amount = scroll_dir * text_height * _scroll_multiplier;
 	var _new_position = scroll_position + _amount;
@@ -28,7 +35,8 @@ if scroll_dir != 0 && ds_list_size(results) > 0 {
 	var _h_total = _h * ds_list_size(results);
 	var _y1 = -_h_total + _h * _scroll_multiplier;
 	var _y2 = results_box.get_height() - _h * _scroll_multiplier;
-	if _new_position == clamp(_new_position, _y1, _y2) {
+	if _new_position == clamp(_new_position, _y1, _y2) 
+	{
 		scroll_position = _new_position;
 	}
 }

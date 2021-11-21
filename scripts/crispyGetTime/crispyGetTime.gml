@@ -3,6 +3,7 @@
  * @function
  * @returns {number} Time that your game has been running in milliseconds
  */
-function crispyGetTime() {
+function crispyGetTime() 
+{
 	return get_timer();
 }

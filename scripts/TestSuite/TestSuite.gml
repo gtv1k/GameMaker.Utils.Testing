@@ -4,8 +4,8 @@
  * @param {string} [name] - Name of runner
  * @param {struct} - Struct for crispyStructUnpack
  */
-function TestSuite() : BaseTestClass() constructor {
-
+function TestSuite() : BaseTestClass() constructor 
+{
 	var _name = (argument_count > 0 && is_string(argument[0])) ? argument[0] : "TestSuite";
 
 	name = _name;
@@ -18,9 +18,11 @@ function TestSuite() : BaseTestClass() constructor {
 	 * @function
 	 * @param {TestCase} case - TestCase to add
 	 */
-	static addTestCase = function(_case) {
+	static addTestCase = function(_case) 
+	{
 		var _inst = instanceof(_case);
-		if _inst != "TestCase" {
+		if _inst != "TestCase" 
+		{
 			var _type = !is_undefined(_inst) ? _inst : typeof(_case);
 			crispyThrowExpected(self, "addTestCase", "TestCase", _type);
 		}
@@ -34,16 +36,24 @@ function TestSuite() : BaseTestClass() constructor {
 	 * @function
 	 * @param {method} [func] - Function to overwrite __setUp__
 	 */
-	static setUp = function() {
-		if argument_count > 0 {
+	static setUp = function() 
+	{
+		if (argument_count > 0)
+		{
 			var _func = argument[0];
-			if is_method(_func) {
+			if is_method(_func) 
+			{
 				__setUp__ = method(self, _func);
-			} else {
+			} 
+			else 
+			{
 				crispyThrowExpected(self, "setUp", "method", typeof(_func));
 			}
-		} else {
-			if is_method(__setUp__) {
+		}
+		else 
+		{
+			if is_method(__setUp__) 
+			{
 				__setUp__();
 			}
 		}
@@ -55,16 +65,24 @@ function TestSuite() : BaseTestClass() constructor {
 	 * @function
 	 * @param {method} [func] - Function to overwrite __tearDown__
 	 */
-	static tearDown = function() {
-		if argument_count > 0 {
+	static tearDown = function() 
+	{
+		if argument_count > 0 
+		{
 			var _func = argument[0];
-			if is_method(_func) {
+			if is_method(_func) 
+			{
 				__tearDown__ = method(self, _func);
-			} else {
+			} 
+			else 
+			{
 				crispyThrowExpected(self, "tearDown", "method", typeof(_func));
 			}
-		} else {
-			if is_method(__tearDown__) {
+		} 
+		else 
+		{
+			if is_method(__tearDown__) 
+			{
 				__tearDown__();
 			}
 		}
@@ -74,10 +92,12 @@ function TestSuite() : BaseTestClass() constructor {
 	 * Runs tests
 	 * @function
 	 */
-	static run = function() {
+	static run = function() 
+	{
 		setUp();
 		var _len = array_length(tests);
-		for(var i = 0; i < _len; i++) {
+		for(var i = 0; i < _len; i++) 
+		{
 			tests[i].run();
 		}
 		tearDown();
@@ -87,17 +107,21 @@ function TestSuite() : BaseTestClass() constructor {
 	 * Set the name of the TestCase
 	 * @param {string} name - Name of the test
 	 */
-	static setName = function(_name) {
-		if !is_string(_name) {
+	static setName = function(_name) 
+	{
+		if !is_string(_name) 
+		{
 			crispyThrowExpected(self, "setName", "string", typeof(_name));
 		}
 		name = _name;
 	}
 
 	// Struct unpacker if a struct was passed as unpack
-	if argument_count > 1 {
+	if argument_count > 1 
+	{
 		var _unpack = argument[1];
-		if !is_struct(_unpack) {
+		if !is_struct(_unpack) 
+		{
 			crispyThrowExpected(self, "", "struct", typeof(_unpack));
 		}
 		crispyStructUnpack(_unpack);
