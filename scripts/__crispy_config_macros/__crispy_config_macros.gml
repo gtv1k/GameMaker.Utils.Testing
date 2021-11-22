@@ -1,7 +1,7 @@
-#macro CRISPY_NAME "Crispy"
-#macro CRISPY_AUTHOR "Brent Frymire"
-#macro CRISPY_VERSION "1.3.0"
-#macro CRISPY_DATE "2021-09-14"
+#macro CRISPY_NAME "GameMaker.Utils.Testing"
+#macro CRISPY_AUTHOR "Brent Frymire, adapted by Walter Hulsebos"
+#macro CRISPY_VERSION "2.0.0"
+#macro CRISPY_DATE "2021-11-21"
 
 #macro CRISPY_RUN true // Boolean flag that can be used to automatically run tests
 #macro CRISPY_DEBUG false // Enables outputting extra context on some silent functions

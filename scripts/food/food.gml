@@ -19,24 +19,32 @@ function Food(_name, _ingredients) constructor {
 	}
 	name = _name
 	ingredients = _ingredients;
-	is_gluten_free = function() {
+	is_gluten_free = function()
+	{
 		var _gf = true;
-		for (var i = 0; i < array_length(ingredients); i++) {
-			if !ingredients[i].is_gluten_free {
+		for (var i = 0; i < array_length(ingredients); i++)
+		{
+			if !ingredients[i].is_gluten_free
+			{
 				return false;
 			}
 		}
 		return true;
 	}
-	ingredient_number = function() {
+	ingredient_number = function()
+	{
 		return array_length(ingredients);
 	}
-	has_ingredient = function(_name) {
-		if !is_string(_name) {
+	has_ingredient = function(_name)
+	{
+		if !is_string(_name)
+		{
 			throw("Food ingredient name expected a string, got " + typeof(_name));
 		}
-		for (var i = 0; i < array_length(ingredients); i++) {
-			if ingredients[i].name == _name {
+		for (var i = 0; i < array_length(ingredients); i++)
+		{
+			if (ingredients[i].name == _name)
+			{
 				return true;
 			}
 		}
@@ -50,11 +58,14 @@ function Food(_name, _ingredients) constructor {
  * @param {string} name - Name of ingredient
  * @param [boolean=false] is_gluten_free - Ingredient is gluten free
  */
-function Ingredient(_name, _gf=false) constructor {
-	if !is_string(_name) {
+function Ingredient(_name, _gf=false) constructor 
+{
+	if !is_string(_name) 
+	{
 		throw("Ingredient name expected a string, got " + typeof(_name));
 	}
-	if !is_real(_gf) && !is_bool(_gf) {
+	if !is_real(_gf) && !is_bool(_gf) 
+	{
 		throw("Ingredient is_gluten_free expected a boolean, got " + typeof(_gf));
 	}
 	name = _name;

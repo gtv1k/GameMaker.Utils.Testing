@@ -5,8 +5,8 @@
  * @param {string} name - Name of TestCase
  * @param {struct} [unpack] - Struct for crispyStructUnpack
  */
-function TestCase() : BaseTestClass() constructor {
-
+function TestCase() : BaseTestClass() constructor 
+{
 	var _func = (argument_count > 0) ? argument[0] : undefined;
 	var _name = (argument_count > 1) ? argument[1] : undefined;
 
@@ -31,7 +31,8 @@ function TestCase() : BaseTestClass() constructor {
 	 * @function
 	 * @param {method} func - Function to turn into a method variable
 	 */
-	static createTestMethod = function() {
+	static createTestMethod = function() 
+	{
 		_func = (argument_count > 0) ? argument[0] : undefined;
 		if !is_method(_func) {
 			crispyThrowExpected(self, "createMethodVariable", "method", typeof(_func));
@@ -44,12 +45,14 @@ function TestCase() : BaseTestClass() constructor {
 	 * @function
 	 * @param log - Log struct
 	 */
-	static addLog = function() {
+	static addLog = function() 
+	{
 		var _log = (argument_count > 0) ? argument[0] : undefined;
 		array_push(logs, _log);
 	}
 
-	static clearLogs = function() {
+	static clearLogs = function() 
+	{
 		logs = [];
 	}
 
@@ -61,7 +64,8 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} second - Second value to check against _first
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertEqual = function() {
+	static assertEqual = function() 
+	{
 		var _first = (argument_count > 0) ? argument[0] : undefined;
 		var _second = (argument_count > 1) ? argument[1] : undefined;
 		var _message = (argument_count > 2) ? argument[2] : undefined;
@@ -69,9 +73,12 @@ function TestCase() : BaseTestClass() constructor {
 			addLog(new CrispyLog(self, {pass:false,msg:"Supplied value types are not equal: " + typeof(_first) + " and " + typeof(_second) + "."}));
 			return;
 		}
-		if _first == _second {
+		if _first == _second 
+		{
 			addLog(new CrispyLog(self));
-		} else {
+		}
+		else 
+		{
 			addLog(new CrispyLog(self, {pass:false,msg:_message,helper_text:"first and second are not equal: " + string(_first) + ", " + string(_second)}));
 		}
 	}
@@ -83,7 +90,8 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} second - Second type to check against
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertNotEqual = function() {
+	static assertNotEqual = function() 
+	{
 		var _first = (argument_count > 0) ? argument[0] : undefined;
 		var _second = (argument_count > 1) ? argument[1] : undefined;
 		var _message = (argument_count > 2) ? argument[2] : undefined;
@@ -101,19 +109,25 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} expr - Expression to check
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertTrue = function() {
+	static assertTrue = function() 
+	{
 		var _expr = (argument_count > 0) ? argument[0] : undefined;
 		var _message = (argument_count > 1) ? argument[1] : undefined;
-		try {
+		try
+		{
 			var _bool = bool(_expr);
 		}
-		catch(err) {
+		catch(err) 
+		{
 			addLog(new CrispyLog(self, {pass:false,helper_text:"Unable to convert " + typeof(_expr) + " into boolean. Cannot evaluate."}));
 			return;
 		}
-		if _bool == true {
+		if _bool == true 
+		{
 			addLog(new CrispyLog(self, {pass:true}));
-		} else {
+		}
+		else 
+		{
 			addLog(new CrispyLog(self, {pass:false,msg:_message,helper_text:"Expression is not true."}));
 		}
 	}
@@ -125,19 +139,25 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} expr - Expression to check
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertFalse = function() {
+	static assertFalse = function() 
+	{
 		var _expr = (argument_count > 0) ? argument[0] : undefined;
 		var _message = (argument_count > 1) ? argument[1] : undefined;
-		try {
+		try 
+		{
 			var _bool = bool(_expr);
 		}
-		catch(err) {
+		catch(err) 
+		{
 			addLog(new CrispyLog(self, {pass:false,helper_text:"Unable to convert " + typeof(_expr) + " into boolean. Cannot evaluate."}));
 			return;
 		}
-		if _bool == false {
+		if _bool == false 
+		{
 			addLog(new CrispyLog(self, {pass:true}));
-		} else {
+		}
+		else
+		{
 			addLog(new CrispyLog(self, {pass:false,msg:_message,helper_text:"Expression is not false."}));
 		}
 	}
@@ -148,12 +168,16 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} expr - Expression to check
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertIsNoone = function() {
+	static assertIsNoone = function() 
+	{
 		var _expr = (argument_count > 0) ? argument[0] : undefined;
 		var _message = (argument_count > 1) ? argument[1] : undefined;
-		if _expr == -4 {
+		if (_expr == -4)
+		{
 			addLog(new CrispyLog(self, {pass:true}));
-		} else {
+		}
+		else 
+		{
 			addLog(new CrispyLog(self, {pass:false,msg:_message,helper_text:"Expression is not noone."}));
 		}
 	}
@@ -164,12 +188,16 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} expr - Expression to check
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertIsNotNoone = function() {
+	static assertIsNotNoone = function() 
+	{
 		var _expr = (argument_count > 0) ? argument[0] : undefined;
 		var _message = (argument_count > 1) ? argument[1] : undefined;
-		if _expr != -4 {
+		if (_expr != -4)
+		{
 			addLog(new CrispyLog(self, {pass:true}));
-		} else {
+		}
+		else 
+		{
 			addLog(new CrispyLog(self, {pass:false,msg:_message,helper_text:"Expression is noone."}));
 		}
 	}
@@ -180,12 +208,16 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} expr - Expression to check
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertIsUndefined = function() {
+	static assertIsUndefined = function() 
+	{
 		var _expr = (argument_count > 0) ? argument[0] : undefined;
 		var _message = (argument_count > 1) ? argument[1] : undefined;
-		if is_undefined(_expr) {
+		if is_undefined(_expr) 
+		{
 			addLog(new CrispyLog(self, {pass:true}));
-		} else {
+		}
+		else 
+		{
 			addLog(new CrispyLog(self, {pass:false,msg:_message,helper_text:"Expression is not undefined."}));
 		}
 	}
@@ -196,12 +228,16 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {*} expr - Expression to check
 	 * @param {string} [message] - Custom message to output on failure
 	 */
-	static assertIsNotUndefined = function() {
+	static assertIsNotUndefined = function() 
+	{
 		var _expr = (argument_count > 0) ? argument[0] : undefined;
 		var _message = (argument_count > 1) ? argument[1] : undefined;
-		if !is_undefined(_expr) {
+		if !is_undefined(_expr) 
+		{
 			addLog(new CrispyLog(self, {pass:true}));
-		} else {
+		}
+		else 
+		{
 			addLog(new CrispyLog(self, {pass:false,msg:_message,helper_text:"Expression is undefined."}));
 		}
 	}
@@ -212,17 +248,25 @@ function TestCase() : BaseTestClass() constructor {
 	 * @function
 	 * @param {method} [func] - Method to override __setUp__ with
 	 */
-	static setUp = function() {
-		if argument_count > 0 {
+	static setUp = function() 
+	{
+		if argument_count > 0 
+		{
 			var _func = argument[0];
-			if is_method(_func) {
+			if is_method(_func) 
+			{
 				__setUp__ = method(self, _func);
-			} else {
+			}
+			else
+			{
 				crispyThrowExpected(self, "setUp", "method", typeof(_func));
 			}
-		} else {
+		} 
+		else 
+		{
 			clearLogs();
-			if is_method(__setUp__) {
+			if is_method(__setUp__) 
+			{
 				__setUp__();
 			}
 		}
@@ -233,16 +277,23 @@ function TestCase() : BaseTestClass() constructor {
 	 * @function
 	 * @param {method} [func] - Method to override __tearDown__ with
 	 */
-	static tearDown = function() {
-		if argument_count > 0 {
+	static tearDown = function() 
+	{
+		if argument_count > 0 
+		{
 			var _func = argument[0];
 			if is_method(_func) {
 				__tearDown__ = method(self, _func);
-			} else {
+			} 
+			else 
+			{
 				crispyThrowExpected(self, "tearDown", "method", typeof(_func));
 			}
-		} else {
-			if is_method(__tearDown__) {
+		} 
+		else 
+		{
+			if is_method(__tearDown__) 
+			{
 				__tearDown__();
 			}
 		}
@@ -252,7 +303,8 @@ function TestCase() : BaseTestClass() constructor {
 	 * Set of functions to run in order for the test
 	 * @function
 	 */
-	static run = function() {
+	static run = function() 
+	{
 		setUp();
 		test();
 		tearDown();
@@ -264,7 +316,8 @@ function TestCase() : BaseTestClass() constructor {
 	 * @param {real} script - ID of script
 	 * @returns self
 	 */
-	static __discover__ = function() {
+	static __discover__ = function() 
+	{
 		var _script = (argument_count > 0) ? argument[0] : undefined;
 		if !is_real(_script) {
 			crispyThrowExpected(self, "__discovered__", "real", typeof(_script));
@@ -278,9 +331,11 @@ function TestCase() : BaseTestClass() constructor {
 	/**
 	 * Struct unpacker if a struct was passed as unpack
 	 */
-	if argument_count > 2 {
+	if argument_count > 2 
+	{
 		var _unpack = argument[2];
-		if !is_struct(_unpack) {
+		if !is_struct(_unpack) 
+		{
 			crispyThrowExpected(self, "", "struct", typeof(_unpack));
 		}
 		crispyStructUnpack(_unpack);

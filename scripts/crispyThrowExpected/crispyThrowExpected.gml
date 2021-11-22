@@ -6,24 +6,28 @@
  * @param {string} expected - String of the type of value expected to receive
  * @param {string} received - String of the type of value received
  */
-function crispyThrowExpected() {
-
+function crispyThrowExpected() 
+{
 	var _self = (argument_count > 0) ? argument[0] : undefined;
 	var _name = (argument_count > 1) ? argument[1] : undefined;
 	var _expected = (argument_count > 2) ? argument[2] : undefined;
 	var _received = (argument_count > 3) ? argument[3] : undefined;
 
 	// Throw error message if wrong type is passed into functions
-	if !is_struct(_self) {
+	if !is_struct(_self) 
+	{
 		throw("crispyThrowExpected() _self parameter expected a struct, received " + typeof(_self) + ".");
 	}
-	if !is_string(_name) {
+	if !is_string(_name) 
+	{
 		throw("crispyThrowExpected() _name parameter expected a string, received " + typeof(_name) + ".");
 	}
-	if !is_string(_expected) {
+	if !is_string(_expected) 
+	{
 		throw("crispyThrowExpected() _expected parameter expected a string, received " + typeof(_expected) + ".");
 	}
-	if !is_string(_received) {
+	if !is_string(_received) 
+	{
 		throw("crispyThrowExpected() _received parameter expected a string, received " + typeof(_received) + ".");
 	}
 
@@ -31,8 +35,10 @@ function crispyThrowExpected() {
 	var _vowels = ["a", "e", "i", "o", "u"];
 	var _len = array_length(_vowels);
 	var _preposition = "a";
-	for(var i = 0; i < _len; i++) {
-		if _char == _vowels[i] {
+	for(var i = 0; i < _len; i++) 
+	{
+		if _char == _vowels[i] 
+		{
 			_preposition = "an";
 			break;
 		}

@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Food",
-    "path": "folders/Scripts/Food.yy",
+    "path": "folders/Scripts/GameMaker.Utils.Testing/Sample/Food.yy",
   },
   "resourceVersion": "1.0",
   "name": "food",
