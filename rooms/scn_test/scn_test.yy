@@ -22,7 +22,7 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_3756AA6B","path":"rooms/rm_test/rm_test.yy",},
+    {"name":"inst_3756AA6B","path":"rooms/scn_test/scn_test.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -46,11 +46,11 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "GameMaker.Utils.Testing",
+    "path": "folders/Rooms/GameMaker.Utils.Testing.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rm_test",
+  "name": "scn_test",
   "tags": [],
   "resourceType": "GMRoom",
 }

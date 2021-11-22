@@ -5,11 +5,12 @@
  * @returns {string} time in seconds with CRISPY_TIME_PRECISION number
  * 		of decimal points as a string
  */
-function crispyTimeConvert() {
-
+function crispyTimeConvert() 
+{
     var _time = (argument_count > 0) ? argument[0] : undefined;
 
-	if !is_real(_time) {
+	if !is_real(_time) 
+	{
 		crispyThrowExpected(self, "crispyTimeConvert", "number", typeof(_time));
 	}
 
