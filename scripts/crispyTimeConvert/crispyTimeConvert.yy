@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Editor",
-    "path": "folders/Scripts/GameMaker.Utils.Testing/Editor.yy",
+    "path": "folders/GameMaker.Utils.Testing/Scripts/Editor.yy",
   },
   "resourceVersion": "1.0",
   "name": "crispyTimeConvert",
